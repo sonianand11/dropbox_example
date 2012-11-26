@@ -23,11 +23,11 @@ class DropBoxController < ApplicationController
    response = @client.put_file("/README.rdoc", file)
    @share = @client.shares("README.rdoc")
    @file_metadata = @client.metadata('/')
-
-   @file_metadata["contents"].each do |file|
-     contents, @metadata = @client.get_file_and_metadata("#{file["path"]}")
-     open("#{Rails.root}/#{file["path"]}", 'w') {|f| f.puts contents }
-   end
+	
+   #@file_metadata["contents"].each do |file|
+    # contents, @metadata = @client.get_file_and_metadata("#{file["path"]}")
+     #open("#{Rails.root}/#{file["path"]}", 'w') {|f| f.puts contents }
+   #end
 
 
    respond_to do |format|
